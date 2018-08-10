@@ -1,2 +1,2 @@
 # ld42
-Ziemniaczki z bigosu
+Ziemniaczki z bigosu i gruszki na drzewie.
