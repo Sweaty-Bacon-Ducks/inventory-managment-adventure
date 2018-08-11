@@ -1,22 +1,17 @@
 ﻿using UnityEngine;
 using System;
 
+
+//[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 /// <summary>
 /// Interface for inventory items
 /// </summary>
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class InventoryItem : ScriptableObject
 {
 	public string Name = "";
 	public string Description = "";
-	public bool Usable = true;
+	public float Weight = 0;
+	public float Price = 0;
 
-	public Sprite Icon = null;
-	/// <summary>
-	/// Virtual method for using inventory items
-	/// </summary>
-	public virtual void Use()
-	{
-		throw new NotImplementedException("Musisz zaimplementować tą metodę!");
-	}
+	public Sprite Icon;
 }

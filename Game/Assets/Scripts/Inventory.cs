@@ -1,27 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour 
+public class Inventory : MonoBehaviour
 {
-	private List<InventoryItem> Items;
+	private List<InventoryItem> items;
 
 	public void AddToInventory(InventoryItem item)
 	{
 		if (item != null)
 		{
-			Items.Add(item);
+			items.Add(item);
 		}
 	}
 
 	public bool RemoveFromInventory(InventoryItem item)
 	{
-		return Items.Remove(item);
+		return items.Remove(item);
 	}
 
 	public bool RemoveAllFromInventory()
 	{
-		return Items.RemoveAll(x => x) > 0;
+		return items.RemoveAll(x => x) > 0;
 	}
 }
