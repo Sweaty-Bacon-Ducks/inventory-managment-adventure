@@ -6,8 +6,11 @@ using UnityEngine;
 public class Weapon : InventoryItem
 {
 	[SerializeField]
-	private float damage = 1;
+	private float maxDamage = 0.1f;
 	[SerializeField]
-	private float attackInterval = 0.1f;
+	private float minDamage = 0.1f;
 
+	[SerializeField]
+	private float attackSpeed = 0.1f;
+	
 }

@@ -7,6 +7,5 @@ public class Armor : InventoryItem
 {
 	[SerializeField]
 	private float maxArmor = 100;
-	[SerializeField]
 	private float currentArmor = 0;
 }
