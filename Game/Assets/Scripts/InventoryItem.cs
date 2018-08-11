@@ -6,6 +6,7 @@ using System;
 /// <summary>
 /// Interface for inventory items
 /// </summary>
+[Serializable]
 public class InventoryItem : ScriptableObject
 {
 	public string Name = "";

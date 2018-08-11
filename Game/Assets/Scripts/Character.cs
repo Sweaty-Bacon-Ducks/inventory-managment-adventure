@@ -3,36 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character
+[CreateAssetMenu(fileName = "New Item", menuName = "Characters/Character")]
+public class Character : ScriptableObject
 {
-	public string Name = "";
+	[SerializeField]
+	private string _name;
 
-	public float HitPoints;
-	public float MaxHitPoints;
+	private float hitPoints;
 
-	public bool IsDead;
+	[SerializeField]
+	private float maxHitPoints;
 
-	public Character(string Name,float MaxHitPoints = 100)
-	{
-		this.Name = Name;
+	private bool isDead;
 
-		this.MaxHitPoints = MaxHitPoints;
-		this.HitPoints = MaxHitPoints;
+	[SerializeField]
+	private Weapon characterWeapon;
+	[SerializeField]
+	private Armor characterArmor;
 
-		this.IsDead = false;
-	}
+	[SerializeField]
+	private Inventory Backpack;
 
 	private string Die()
 	{
 		return "Character {0} died!"; 
 	}
-
+	
 	public void DealDamage(float damageAmount)
 	{
 		if (damageAmount > 0)
 		{
-			HitPoints -= damageAmount;
-			if (HitPoints <= 0)
+			hitPoints -= damageAmount;
+			if (hitPoints <= 0)
 			{
 				Die();
 			}
@@ -47,15 +49,20 @@ public class Character
 	{
 		if (healAmount > 0)
 		{
-			HitPoints += healAmount;
-			if (HitPoints > MaxHitPoints)
+			hitPoints += healAmount;
+			if (hitPoints > maxHitPoints)
 			{
-				HitPoints = MaxHitPoints;
+				hitPoints = maxHitPoints;
 			}
 		}
 		else
 		{
 			Debug.LogWarning("Argument has negative value!");
 		}
+	}
+
+	public bool? AddToInventory(InventoryItem item)
+	{
+		return Backpack.AddToInventory(item);
 	}
 }
