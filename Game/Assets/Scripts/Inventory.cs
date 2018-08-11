@@ -1,16 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+[Serializable]
+public class Inventory
 {
+	[SerializeField]
 	private List<InventoryItem> items;
 
-	public void AddToInventory(InventoryItem item)
+	[SerializeField]
+	private float maxWeight;
+
+	[SerializeField]
+	private float currentWeight;
+
+	public Inventory(float maxWeight)
+	{
+		this.maxWeight = maxWeight; 
+		items = new List<InventoryItem>();
+
+	}
+
+	public bool? AddToInventory(InventoryItem item)
 	{
 		if (item != null)
 		{
-			items.Add(item);
+			if (currentWeight + item.Weight <= maxWeight)
+			{
+				items.Add(item);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
+		return null;
 	}
 
 	public bool RemoveFromInventory(InventoryItem item)
