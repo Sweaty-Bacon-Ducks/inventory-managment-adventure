@@ -10,7 +10,7 @@ public class UsableItem : InventoryItem
 	/// <summary>
 	/// Virtual method for using inventory items
 	/// </summary>
-	public virtual void Use()
+	public virtual void Use(object obj)
 	{
 		throw new NotImplementedException("Musisz zaimplementować tą metodę!");
 	}
