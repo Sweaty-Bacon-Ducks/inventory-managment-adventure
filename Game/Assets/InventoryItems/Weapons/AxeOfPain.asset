@@ -9,12 +9,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 804d807b534f41c4b82b8470abec209b, type: 3}
-  m_Name: Ax-47
+  m_Name: AxeOfPain
   m_EditorClassIdentifier: 
-  Name: Ax-47
-  Description: Axe made by elfs, Soviet elfs
-  Weight: 0
+  Name: Axe of Pain
+  Description: "Don\u2019t be afraid, it\u2019s actually harmless  "
+  Weight: 10
   Price: 0
-  Icon: {fileID: 0}
-  damage: 1
-  attackInterval: 0.1
+  UIText1: 'Min Damage: 5'
+  UIText2: 'Max Damage: 10'
+  UIText3: 'Attack Speed: 10'
+  Icon: {fileID: 21300000, guid: 14128585e2cd2b4478a3cc4dc7ef9bc5, type: 3}
+  maxDamage: 5
+  minDamage: 10
+  attackSpeed: 10
