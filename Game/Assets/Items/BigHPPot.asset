@@ -11,12 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39658f26e2b318c498f8f12646e5370e, type: 3}
   m_Name: BigHPPot
   m_EditorClassIdentifier: 
-  Name: Big Friggin Potion
+  Name: Big Friggin Potion[ + 500HP]
   Description: 'no AoE damage '
-  Weight: 3
+  Weight: 0
   Price: 0
-  UIText1: 'Heals: 500HP'
-  UIText2: 
-  UIText3: 
-  Icon: {fileID: 21300000, guid: 24a2c543a29dc7b4b8730dcd554d1031, type: 3}
+  Icon: {fileID: 0}
   healingValue: 500
