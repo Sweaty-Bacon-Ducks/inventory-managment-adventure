@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [Serializable]
 public class Inventory
 {
+    public Character character;
+
 	[SerializeField]
 	private List<InventoryItem> items;
 
@@ -55,7 +57,7 @@ public class Inventory
         return success;
     }
 
-	public bool RemoveAllFromInventory()
+    public bool RemoveAllFromInventory()
 	{
         bool success = items.RemoveAll(x => x) > 0;
 
@@ -63,9 +65,23 @@ public class Inventory
         return success;
 	}
 
+
     public void OnInventoryChange()
     {
         if (weigthSlider != null)
             weigthSlider.SetWeight(currentWeight);
+    }
+
+
+    internal void EquipWeapon(InventoryItem item)
+    {
+        //Debug.Log("Equipping weapon: " + item.name);
+        character.ChangeWeapon((Weapon)item);
+    }
+
+    internal void EquipArmor(InventoryItem item)
+    {
+        //Debug.Log("Equipping armor: " + item.name);
+        character.ChangeArmor((Armor)item);
     }
 }

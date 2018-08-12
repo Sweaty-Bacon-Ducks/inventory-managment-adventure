@@ -18,5 +18,5 @@ MonoBehaviour:
   UIText1: 'Heals: 100 HP'
   UIText2: 
   UIText3: 
-  Icon: {fileID: 21300000, guid: 33564abb0ad6c67449257a0a9ddb0dcc, type: 3}
+  Icon: {fileID: 21300000, guid: ca533bfd9b327114fb18007cb44884d7, type: 3}
   healingValue: 100

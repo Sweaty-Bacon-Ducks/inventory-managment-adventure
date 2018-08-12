@@ -68,9 +68,26 @@ public class Character : ScriptableObject, IComparable
 			return isDead;
 		}
 	}
-	#endregion
+    #endregion
 
-	public void Reset()
+    public void ChangeWeapon(Weapon newWeapon)
+    {
+        characterWeapon = newWeapon;
+        OnEquipmentChange();
+    }
+
+    public void ChangeArmor(Armor newArmor)
+    {
+        characterArmor = newArmor;
+        OnEquipmentChange();
+    }
+
+    public void OnEquipmentChange()
+    {
+       
+    }
+
+    public void Reset()
 	{
 		isDead = false;
 		hitPoints = maxHitPoints;
@@ -84,7 +101,6 @@ public class Character : ScriptableObject, IComparable
 
 	public float DealDamage(float damageAmount)
 	{
-
 		float dealtDamage = damageAmount * (characterArmor.CurrentArmor / characterArmor.MaxArmor);
 			hitPoints -= dealtDamage;
 		if (hitPoints <= 0)
