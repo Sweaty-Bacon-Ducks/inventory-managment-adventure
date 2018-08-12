@@ -7,11 +7,11 @@ public class RandomEventManager : MonoBehaviour
     [SerializeField] private float eventChance;
     [SerializeField] private float frequency;
 
-    public float Frequency { set { frequency = Mathf.Max(value, 0.1f); } get { return frequency; } }
+    public float Frequency { set { frequency = Mathf.Max(value, 0.01f); } get { return frequency; } }
     public float EventChance { set { eventChance = Mathf.Lerp(0f, 1f, value); } get { return eventChance; } }
     void OnValidate()
     {
-        frequency = Mathf.Max(frequency, 0.1f);
+        frequency = Mathf.Max(frequency, 0.01f);
         eventChance = Mathf.Lerp(0f, 1f, eventChance);
     }
 
