@@ -9,15 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86efc7f84486e0e4b86dadf2927566dc, type: 3}
-  m_Name: HIV Suite
+  m_Name: HEV Suite
   m_EditorClassIdentifier: 
-  Name: HIV Suit
-  Description: Hazardous Interiors Suit
+  Name: HEV Suite
+  Description: Once belonged to a mute person
   Weight: 25
-  Price: 0
-  UIText1: 'Max Armor: 100'
-  UIText2: 
-  UIText3: 
-  Icon: {fileID: 21300000, guid: 33564abb0ad6c67449257a0a9ddb0dcc, type: 3}
+  Price: 999999
+  Icon: {fileID: 0}
   maxArmor: 100
-  currentArmor: 100

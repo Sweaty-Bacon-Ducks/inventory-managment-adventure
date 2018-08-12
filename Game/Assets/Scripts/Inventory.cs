@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class Inventory
@@ -15,13 +14,12 @@ public class Inventory
 	[SerializeField]
 	private float currentWeight;
 
-    public WeigthSlider weigthSlider;
-
 	public Inventory(float maxWeight)
 	{
-		this.maxWeight = maxWeight;
+		this.maxWeight = maxWeight; 
 		items = new List<InventoryItem>();
-    }
+
+	}
 
 	public bool? AddToInventory(InventoryItem item)
 	{
@@ -30,10 +28,7 @@ public class Inventory
 			if (currentWeight + item.Weight <= maxWeight)
 			{
 				items.Add(item);
-
-                currentWeight += item.Weight;
-                OnInventoryChange();
-                return true;
+				return true;
 			}
 			else
 			{
@@ -45,27 +40,11 @@ public class Inventory
 
 	public bool RemoveFromInventory(InventoryItem item)
 	{
-        bool success = items.Remove(item);
-        if (success == true)
-        {
-            currentWeight -= item.Weight;
-            OnInventoryChange();
-        }
-
-        return success;
-    }
+		return items.Remove(item);
+	}
 
 	public bool RemoveAllFromInventory()
 	{
-        bool success = items.RemoveAll(x => x) > 0;
-
-        OnInventoryChange();
-        return success;
+		return items.RemoveAll(x => x) > 0;
 	}
-
-    public void OnInventoryChange()
-    {
-        if (weigthSlider != null)
-            weigthSlider.SetWeight(currentWeight);
-    }
 }

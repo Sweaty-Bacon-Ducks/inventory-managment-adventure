@@ -14,9 +14,5 @@ public class InventoryItem : ScriptableObject
 	public float Weight = 0;
 	public float Price = 0;
 
-    public string UIText1;
-    public string UIText2;
-    public string UIText3;
-
 	public Sprite Icon;
 }

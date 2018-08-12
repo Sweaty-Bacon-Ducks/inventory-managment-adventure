@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222655884370813036}
   - component: {fileID: 114886653467972358}
   m_Layer: 5
-  m_Name: Text1
+  m_Name: MinDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 114783650340076260}
   - component: {fileID: 114837346295025004}
   - component: {fileID: 225862367914316064}
-  - component: {fileID: 114381558193821294}
   m_Layer: 5
   m_Name: AxeofPain
   m_TagString: Untagged
@@ -128,7 +127,7 @@ GameObject:
   - component: {fileID: 222026615252612542}
   - component: {fileID: 114996916568095598}
   m_Layer: 5
-  m_Name: Text2
+  m_Name: MaxDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,24 +144,12 @@ GameObject:
   - component: {fileID: 222340673386083644}
   - component: {fileID: 114736961886580036}
   m_Layer: 5
-  m_Name: Text3
+  m_Name: Speed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114381558193821294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1768277089238626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d79c64fe4e4fd2d4baa54139be886a80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 90721d379c1caba4ba81002632c89ee2, type: 2}
 --- !u!114 &114494496498134536
 MonoBehaviour:
   m_ObjectHideFlags: 1
