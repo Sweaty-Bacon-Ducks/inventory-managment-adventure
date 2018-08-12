@@ -14,8 +14,11 @@ MonoBehaviour:
   Name: Boom Stick
   Description: You see this you primitive screwheads?
   Weight: 10
-  Price: 1234
-  Icon: {fileID: 0}
-  maxDamage: 15
-  minDamage: 10
-  attackSpeed: 3
+  Price: 0
+  UIText1: 'Min Damage: 10'
+  UIText2: 'Max Damage: 50'
+  UIText3: 'Attack Speed: 5'
+  Icon: {fileID: 21300000, guid: 466650357f8049640a831526fbe3374a, type: 3}
+  maxDamage: 10
+  minDamage: 50
+  attackSpeed: 5

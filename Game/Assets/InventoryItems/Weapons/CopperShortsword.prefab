@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 114853020644859474}
   - component: {fileID: 114882045759544758}
   - component: {fileID: 225275956848554984}
+  - component: {fileID: 114686894207216310}
   m_Layer: 5
   m_Name: CopperShortsword
   m_TagString: Untagged
@@ -703,6 +704,18 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114686894207216310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930329754039860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79c64fe4e4fd2d4baa54139be886a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: b52ab50dfbec50c4bbdd31aa7fb80cb7, type: 2}
 --- !u!114 &114822346904554864
 MonoBehaviour:
   m_ObjectHideFlags: 1
