@@ -8,6 +8,8 @@ using TMPro;
 public class Logger : MonoBehaviour
 {
     private static Logger instance;
+    [SerializeField] private ScrollRect scrollRect;
+
     public static Logger Instance { get { return instance; } }
 
     [SerializeField] private TMP_Text contentWindow;
@@ -23,20 +25,25 @@ public class Logger : MonoBehaviour
             instance = this;
         }
 
-        
+        //scrollRect = GetComponentInChildren<ScrollRect>();
     }
 
     public void ShowLog(DateTime datetime, string log)
     {
         string txt = datetime.Minute+":"+datetime.Second + " " + log + Environment.NewLine;
         contentWindow.text += txt;
-        
+        GetDown();
+
+    }
+
+
+    public void GetDown()
+    {
+        //scrollRect.verticalScrollbar.value = 0f;
+        scrollRect.velocity = new Vector2(0, 10000);
     }
 
 
 
-
-   
-    
 
 }
