@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +8,10 @@ using TMPro;
 public class Logger : MonoBehaviour
 {
     private static Logger instance;
-    [SerializeField] private ScrollRect scrollRect;
-
     public static Logger Instance { get { return instance; } }
 
     [SerializeField] private TMP_Text contentWindow;
-
+    [SerializeField] private ScrollRect scrollRect;
     private void Awake()
     {
         if (instance!=null&&instance!=this)
@@ -25,25 +23,19 @@ public class Logger : MonoBehaviour
             instance = this;
         }
 
-        //scrollRect = GetComponentInChildren<ScrollRect>();
+
     }
 
     public void ShowLog(DateTime datetime, string log)
     {
         string txt = datetime.Minute+":"+datetime.Second + " " + log + Environment.NewLine;
         contentWindow.text += txt;
-        GetDown();
-
+        StartCoroutine(GetDown());
     }
 
-
-    public void GetDown()
+    IEnumerator GetDown()
     {
-        //scrollRect.verticalScrollbar.value = 0f;
-        scrollRect.velocity = new Vector2(0, 10000);
+        yield return new WaitForEndOfFrame();
+        scrollRect.verticalNormalizedPosition = 0f;
     }
-
-
-
-
 }

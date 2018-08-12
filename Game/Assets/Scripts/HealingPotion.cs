@@ -7,7 +7,7 @@ public class HealingPotion : UsableItem
 {
     [SerializeField] private float healingValue;
 
-    public override void Use()
+    public override void Use(object obj)
     {
 
     }
