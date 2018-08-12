@@ -15,6 +15,9 @@ public class UIItem : MonoBehaviour {
     private TextMeshProUGUI text3;
 
     private TextMeshProUGUI weight;
+    private TextMeshProUGUI equipped;
+
+    public bool isEquipped = false;
 
     private void Start()
     {
@@ -25,6 +28,7 @@ public class UIItem : MonoBehaviour {
         text2 = transform.Find("Text2").GetComponent<TextMeshProUGUI>();
         text3 = transform.Find("Text3").GetComponent<TextMeshProUGUI>();
         weight = transform.Find("Weight").GetComponent<TextMeshProUGUI>();
+        equipped = transform.Find("Equipped").GetComponent<TextMeshProUGUI>();
 
         image.sprite = item.Icon;
         name.text = item.name;
@@ -33,5 +37,17 @@ public class UIItem : MonoBehaviour {
         text2.text = item.UIText2;
         text3.text = item.UIText3;
         weight.text = item.Weight.ToString("R");
+    }
+
+    public void Equip()
+    {
+        equipped.text = "E";
+        isEquipped = true;
+    }
+
+    public void UnEquip()
+    {
+        equipped.text = "";
+        isEquipped = false;
     }
 }

@@ -53,16 +53,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory:
+    character: {fileID: 0}
     items: []
     maxWeight: 0
     currentWeight: 0
     weigthSlider: {fileID: 0}
   shopInventory:
+    character: {fileID: 0}
     items: []
     maxWeight: 0
     currentWeight: 0
     weigthSlider: {fileID: 0}
   playerSlider: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &114289183053688082
 MonoBehaviour:
   m_ObjectHideFlags: 1
