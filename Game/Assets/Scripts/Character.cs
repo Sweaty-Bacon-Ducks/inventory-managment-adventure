@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Characters/Character")]
-public class Character : ScriptableObject
+public class Character : ScriptableObject, IComparable
 {
 	[SerializeField]
 	private string _name;
@@ -24,25 +24,74 @@ public class Character : ScriptableObject
 	[SerializeField]
 	private Inventory Backpack;
 
-	private string Die()
+	#region Properties
+	public Weapon CharacterWeapon
 	{
-		return "Character {0} died!"; 
+		get
+		{
+			return characterWeapon;
+		}
 	}
-	
-	public void DealDamage(float damageAmount)
+	public Armor CharacterArmor
 	{
-		if (damageAmount > 0)
+		get
 		{
-			hitPoints -= damageAmount;
-			if (hitPoints <= 0)
-			{
-				Die();
-			}
+			return characterArmor;
 		}
-		else
+	}
+	public string Name
+	{
+		get
 		{
-			Debug.LogWarning("Argument has negative value!");
+			return _name;
 		}
+	}
+	public float HitPoints
+	{
+		get
+		{
+			return hitPoints;
+		}
+	}
+	public float MaxHitPoints
+	{
+		get
+		{
+			return maxHitPoints;
+		}
+	}
+
+	public bool IsDead
+	{
+		get
+		{
+			return isDead;
+		}
+	}
+	#endregion
+
+	public void Reset()
+	{
+		isDead = false;
+		hitPoints = maxHitPoints;
+	}
+
+	private void Die()
+	{
+		isDead = true;
+		hitPoints = 0;
+	}
+
+	public float DealDamage(float damageAmount)
+	{
+
+		float dealtDamage = damageAmount * (characterArmor.CurrentArmor / characterArmor.MaxArmor);
+			hitPoints -= dealtDamage;
+		if (hitPoints <= 0)
+		{
+			Die();
+		}
+		return dealtDamage;
 	}
 
 	public void PatchUp(float healAmount)
@@ -50,9 +99,9 @@ public class Character : ScriptableObject
 		if (healAmount > 0)
 		{
 			hitPoints += healAmount;
-			if (hitPoints > maxHitPoints)
+			if (hitPoints > MaxHitPoints)
 			{
-				hitPoints = maxHitPoints;
+				hitPoints = MaxHitPoints;
 			}
 		}
 		else
@@ -61,8 +110,27 @@ public class Character : ScriptableObject
 		}
 	}
 
+	public bool RemoveFromInventory(InventoryItem item)
+	{
+		return Backpack.RemoveFromInventory(item);
+	}
+
 	public bool? AddToInventory(InventoryItem item)
 	{
 		return Backpack.AddToInventory(item);
+	}
+
+	int IComparable.CompareTo(object obj)
+	{
+		Character @char = obj as Character;
+		if (this.characterWeapon.AttackSpeed < @char.characterWeapon.AttackSpeed)
+		{
+			return -1;
+		}
+		else if (this.characterWeapon.AttackSpeed > @char.characterWeapon.AttackSpeed)
+		{
+			return 1;
+		}
+		else return 0;
 	}
 }
