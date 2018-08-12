@@ -6,6 +6,7 @@ public class RandomEventManager : MonoBehaviour
 {
     [SerializeField] private float eventChance;
     [SerializeField] private float frequency;
+    [SerializeField] private List<EventSO> eventList;
 
     public float Frequency { set { frequency = Mathf.Max(value, 0.01f); } get { return frequency; } }
     public float EventChance { set { eventChance = Mathf.Lerp(0f, 1f, value); } get { return eventChance; } }
@@ -35,7 +36,7 @@ public class RandomEventManager : MonoBehaviour
 
     private void Execute()
     {
-        Debug.Log("Echo");
+        eventList[Random.Range(0, eventList.Count)].ExecuteEvent();
     }
 
     public void REMOn()

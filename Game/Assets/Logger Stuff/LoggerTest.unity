@@ -1647,8 +1647,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5917735e93abea047a024df5d5a998c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventChance: 0.58
+  eventChance: 1
   frequency: 1
+  eventList:
+  - {fileID: 11400000, guid: 2ca24074a8e4238458363d0d3c888125, type: 2}
 --- !u!114 &1981148644
 MonoBehaviour:
   m_ObjectHideFlags: 0
