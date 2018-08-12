@@ -11,7 +11,7 @@ public class Logger : MonoBehaviour
     public static Logger Instance { get { return instance; } }
 
     [SerializeField] private TMP_Text contentWindow;
-
+    [SerializeField] private ScrollRect scrollRect;
     private void Awake()
     {
         if (instance!=null&&instance!=this)
@@ -30,10 +30,14 @@ public class Logger : MonoBehaviour
     {
         string txt = datetime.Minute+":"+datetime.Second + " " + log + Environment.NewLine;
         contentWindow.text += txt;
-        
+        StartCoroutine(GetDown());
     }
 
-
+    IEnumerator GetDown()
+    {
+        yield return new WaitForEndOfFrame();
+        scrollRect.verticalNormalizedPosition = 0f;
+    }
 
 
    
