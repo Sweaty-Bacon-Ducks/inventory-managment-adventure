@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,49 +12,66 @@ public class WeigthSlider : MonoBehaviour {
     float minWeight = 0;
     float maxWeight;
 
-    float weigth;
+    float currentWeight;
+
+    public TextMeshProUGUI text;
 
     // Use this for initialization
     void Start () {
         slider = GetComponent<Slider>();
-        weigth = minWeight;
+        currentWeight = minWeight;
 
         maxWeight = slider.maxValue;
+
+        UpdateUI();
         ChangeColor();
     }
 
     public void AddWeigth(float newWeigth)
     {
-        weigth += newWeigth;
-        if (weigth > maxWeight)
+        currentWeight += newWeigth;
+        if (currentWeight > maxWeight)
         {
             Debug.LogWarning("Weigth extends maxWeigth! In: " + GetType().Name);
         }
 
-        UpdateValue();
+        UpdateUI();
         ChangeColor();
     }
 
     public void RemoveWeigth(float newWeigth)
     {
-        weigth -= newWeigth;
-        if (weigth < 0)
+        currentWeight -= newWeigth;
+        if (currentWeight < 0)
         {
             Debug.LogWarning("Weigth < 0 In: " + GetType().Name);
         }
 
-        UpdateValue();
+        UpdateUI();
         ChangeColor();
     }
 	
-    void UpdateValue()
+    public void SetWeight(float newWeight)
     {
-        slider.value = weigth;
+        currentWeight = newWeight;
+        if (currentWeight < 0 || currentWeight > maxWeight)
+        {
+            Debug.LogWarning("Weigth wrong In: " + GetType().Name);
+        }
+        UpdateUI();
+        ChangeColor();
+    }
+
+    void UpdateUI()
+    {
+        slider.value = currentWeight;
+
+        text.text = currentWeight + "/" + maxWeight;
     }
 
     void ChangeColor()
     {
-        float weightPercent = (weigth / maxWeight) * 100f;
+        float weightPercent = (currentWeight / maxWeight) * 100f;
 
         if (weightPercent >= 80 && weightPercent <= 100)
         {

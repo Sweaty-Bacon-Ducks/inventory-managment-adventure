@@ -16,7 +16,8 @@ public class Armor : InventoryItem
 		}
 	}
 
-	private float currentArmor = 0;
+    [SerializeField]
+    private float currentArmor = 0;
 
 	public float CurrentArmor
 	{
