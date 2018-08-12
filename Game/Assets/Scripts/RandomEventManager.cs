@@ -36,7 +36,9 @@ public class RandomEventManager : MonoBehaviour
 
     private void Execute()
     {
+        REMOff();
         eventList[Random.Range(0, eventList.Count)].ExecuteEvent();
+        REMOn();
     }
 
     public void REMOn()
