@@ -16,11 +16,10 @@ public class RandomEventManager : MonoBehaviour
         eventChance = Mathf.Lerp(0f, 1f, eventChance);
     }
 
-    private bool stateSwitch = false;
+    public static bool stateSwitch = false;
 	
     private IEnumerator Overwatch()
     { 
-
         while (stateSwitch)
         {
             EventCheck();
@@ -31,7 +30,6 @@ public class RandomEventManager : MonoBehaviour
     private void EventCheck()
     {
         if (Random.Range(0, 100) <= (eventChance * 100)) Execute();
-
     }
 
     private void Execute()
@@ -48,15 +46,10 @@ public class RandomEventManager : MonoBehaviour
             stateSwitch = true;
             StartCoroutine(Overwatch());
         }
-        
     }
 
     public void REMOff()
     {
         stateSwitch=false;
     }
-
-
-
-
 }

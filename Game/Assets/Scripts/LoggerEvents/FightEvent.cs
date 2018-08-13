@@ -4,15 +4,11 @@ using System.Collections;
 using System;
 using Random = UnityEngine.Random;
 
-public class FightEvent : IEvent
+public class FightEvent
 {
-	public FightEvent() { }
-
-	public IEnumerator EventAction(params object[] obj)
+	public IEnumerator EventAction(Character player, Character enemy)
 	{
-		Character player = obj[0] as Character;
-		Character enemy = obj[1] as Character;
-
+		FightEventMono.InProgress = true;
 		const string healString = "{0} healed himself!";
 		const string startString = "{0} has encountered {1}, brace yourselves!";
 		const string hitString = "{0} has hit {1}, dealing {2:0.0} damage!";
@@ -30,7 +26,8 @@ public class FightEvent : IEvent
 		float maxWaitTime = 1.5f;
 
 		float timeBetweenTurns = 0;
-
+		Debug.Log(player.Name);
+		Debug.Log(enemy.Name);
 		int compRes = ((IComparable)player).CompareTo(enemy);
 		if (compRes < 0)
 		{
@@ -100,7 +97,7 @@ public class FightEvent : IEvent
 				if (Random.Range(0f, 1f) > 0.3f)
 				{
 					toLog = "Critical! " + hitString;
-					dmg = 15 * Random.Range(5,10);
+					dmg = 15 * Random.Range(5, 10);
 				}
 				float dealtDamage = nextCharacter.DealDamage(dmg);
 				Logger.Instance.ShowLog(currentTime,
@@ -122,6 +119,8 @@ public class FightEvent : IEvent
 		Logger.Instance.ShowLog(currentTime,
 								String.Format(endString,
 											  winner.Name));
+
+		FightEventMono.InProgress = true;
 	}
 	private Character CheckWinner(Character first, Character second, out Character dead)
 	{

@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a429b46436b522c4d9a2e2af6af2a070, type: 3}
   m_Name: CharacterPool
   m_EditorClassIdentifier: 
-  pool: []
+  pool:
+  - {fileID: 11400000, guid: 4e921d6b815b8e54bb0ae8d73fa4850b, type: 2}
+  - {fileID: 11400000, guid: 1d5198db5db4abb44b79fe6599571e5b, type: 2}

@@ -7,10 +7,12 @@ public class Inventories : MonoBehaviour {
     public Inventory shopInventory;
 
     public WeigthSlider playerSlider;
-    public Character player;
+	public Character _player;
+    public static Character player;
 
     public void Awake()
     {
+		player = _player;
         playerInventory = new Inventory(50f);
         shopInventory = new Inventory(9999f);
     }
