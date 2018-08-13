@@ -11,11 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699ce05c7d124b140adf732c43d03e34, type: 3}
   m_Name: Deny DeVito
   m_EditorClassIdentifier: 
-  _name: TRASHMAN
-  maxHitPoints: 0
-  characterWeapon: {fileID: 0}
-  characterArmor: {fileID: 0}
+  _name: Deny DeVito
+  maxHitPoints: 250
+  characterWeapon: {fileID: 11400000, guid: 1715cd0d8b3083a409b5022e44fa25f7, type: 2}
+  characterArmor: {fileID: 11400000, guid: 3a3d2c2612bf97f40a8be51486b52928, type: 2}
   Backpack:
+    character: {fileID: 0}
     items: []
-    maxWeight: 0
+    maxWeight: 50
     currentWeight: 0
+    weigthSlider: {fileID: 0}
