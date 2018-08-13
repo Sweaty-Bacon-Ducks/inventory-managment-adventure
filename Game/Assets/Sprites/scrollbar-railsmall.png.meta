@@ -86,7 +86,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< master
     spriteID: e1c38289f4d7bb1498419223eb867eaa
+=======
+    spriteID: c47462235af57104bafce957b9489068
+>>>>>>> jebac
     vertices: []
     indices: 
     edges: []

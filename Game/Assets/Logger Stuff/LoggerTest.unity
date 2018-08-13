@@ -335,8 +335,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 634e045bd2c3e8c4db324208145f8478, type: 2}
-        m_MethodName: ExecuteEvent
+      - m_Target: {fileID: 1981148643}
+        m_MethodName: REMOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -582,8 +582,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 21d07f506a8d9dc4c81c169ac4aabe34, type: 2}
-        m_MethodName: DoIt
+      - m_Target: {fileID: 1981148643}
+        m_MethodName: REMOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

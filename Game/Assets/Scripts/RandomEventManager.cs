@@ -22,6 +22,7 @@ public class RandomEventManager : MonoBehaviour
     { 
         while (stateSwitch)
         {
+            Debug.Log("Overwatch");
             EventCheck();
             yield return new WaitForSeconds(frequency);
         }
@@ -29,18 +30,27 @@ public class RandomEventManager : MonoBehaviour
 
     private void EventCheck()
     {
+<<<<<<< master
         if (Random.Range(0, 100) <= (eventChance * 100)) Execute();
+=======
+
+        if (Random.Range(0, 100) <= (eventChance * 100))
+        {
+            REMOff();
+            Execute();
+        }
+>>>>>>> jebac
     }
 
     private void Execute()
     {
-        REMOff();
-        eventList[Random.Range(0, eventList.Count)].ExecuteEvent();
-        REMOn();
+        
+        eventList[Random.Range(0, eventList.Count)].ExecuteEvent(REMOn);
     }
 
     public void REMOn()
     {
+        
         if (!stateSwitch)
         {
             stateSwitch = true;
@@ -50,6 +60,8 @@ public class RandomEventManager : MonoBehaviour
 
     public void REMOff()
     {
-        stateSwitch=false;
+        
+
+        stateSwitch = false;
     }
 }

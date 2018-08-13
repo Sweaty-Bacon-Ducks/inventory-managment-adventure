@@ -8,8 +8,9 @@ public class testEvent : EventSO {
 
     [SerializeField] private string st;
 
-    public override void ExecuteEvent()
+    public override void ExecuteEvent(REMdel r)
     {
         Debug.Log(st);
+        r();
     }
 }
