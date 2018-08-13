@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventories : MonoBehaviour {
-
     public Inventory playerInventory;
     public Inventory shopInventory;
 
@@ -19,7 +18,7 @@ public class Inventories : MonoBehaviour {
     public void Start()
     {
         playerInventory.weigthSlider = playerSlider;
-        player = new Character();
+        //player = ScriptableObject.CreateInstance<Character>();
         playerInventory.character = player;
     }
 

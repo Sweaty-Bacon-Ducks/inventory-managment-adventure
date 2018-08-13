@@ -68,26 +68,26 @@ public class Character : ScriptableObject, IComparable
 			return isDead;
 		}
 	}
-    #endregion
+	#endregion
 
-    public void ChangeWeapon(Weapon newWeapon)
-    {
-        characterWeapon = newWeapon;
-        OnEquipmentChange();
-    }
+	public void ChangeWeapon(Weapon newWeapon)
+	{
+		characterWeapon = newWeapon;
+		OnEquipmentChange();
+	}
 
-    public void ChangeArmor(Armor newArmor)
-    {
-        characterArmor = newArmor;
-        OnEquipmentChange();
-    }
+	public void ChangeArmor(Armor newArmor)
+	{
+		characterArmor = newArmor;
+		OnEquipmentChange();
+	}
 
-    public void OnEquipmentChange()
-    {
-       
-    }
+	public void OnEquipmentChange()
+	{
 
-    public void Reset()
+	}
+
+	public void Reset()
 	{
 		isDead = false;
 		hitPoints = maxHitPoints;
@@ -101,29 +101,43 @@ public class Character : ScriptableObject, IComparable
 
 	public float DealDamage(float damageAmount)
 	{
-		float dealtDamage = damageAmount * (characterArmor.CurrentArmor / characterArmor.MaxArmor);
-			hitPoints -= dealtDamage;
-		if (hitPoints <= 0)
+		if (characterArmor)
 		{
-			Die();
+			float dealtDamage = damageAmount * (1 - (characterArmor.CurrentArmor / characterArmor.MaxArmor));
+			characterArmor.Decay(damageAmount);
+
+			hitPoints -= dealtDamage;
+			if (hitPoints <= 0)
+			{
+				Die();
+			}
+			return dealtDamage;
 		}
-		return dealtDamage;
+		else
+		{
+			float dealtDamage = damageAmount;
+			hitPoints -= dealtDamage;
+			if (hitPoints <= 0)
+			{
+				Die();
+			}
+			return dealtDamage;
+		}
 	}
 
-	public void PatchUp(float healAmount)
+	public bool PatchUp()
 	{
-		if (healAmount > 0)
+		HealingPotion potion = Backpack.FindAndRemoveOfType<HealingPotion>();
+		if (potion != null)
 		{
-			hitPoints += healAmount;
+			hitPoints += potion.HealingValue;
 			if (hitPoints > MaxHitPoints)
 			{
 				hitPoints = MaxHitPoints;
 			}
+			return true;
 		}
-		else
-		{
-			Debug.LogWarning("Argument has negative value!");
-		}
+		return false;
 	}
 
 	public bool RemoveFromInventory(InventoryItem item)
@@ -139,14 +153,26 @@ public class Character : ScriptableObject, IComparable
 	int IComparable.CompareTo(object obj)
 	{
 		Character @char = obj as Character;
-		if (this.characterWeapon.AttackSpeed < @char.characterWeapon.AttackSpeed)
+		if (characterWeapon && @char.characterWeapon)
 		{
-			return -1;
+			if (this.characterWeapon.AttackSpeed < @char.characterWeapon.AttackSpeed)
+			{
+				return -1;
+			}
+			else if (this.characterWeapon.AttackSpeed > @char.characterWeapon.AttackSpeed)
+			{
+				return 1;
+			}
+			else return 0;
 		}
-		else if (this.characterWeapon.AttackSpeed > @char.characterWeapon.AttackSpeed)
+		else if(characterWeapon)
 		{
 			return 1;
 		}
-		else return 0;
+		else
+		{
+			return -1;
+		}
 	}
+
 }

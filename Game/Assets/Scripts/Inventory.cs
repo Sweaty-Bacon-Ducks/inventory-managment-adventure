@@ -24,7 +24,27 @@ public class Inventory
 		this.maxWeight = maxWeight;
 		items = new List<InventoryItem>();
     }
+	public T FindOfType<T>() where T : InventoryItem
+	{
+		foreach (InventoryItem item in items)
+		{
+			if (typeof(T) == item.GetType())
+			{
+				return item as T;
+			}
+		}
+		return null;
+	}
 
+	public T FindAndRemoveOfType<T>() where T : InventoryItem
+	{
+		T result = this.FindOfType<T>();
+		if (result != null)
+		{
+			this.items.Remove(result);
+		}
+		return result;
+	}
 	public bool? AddToInventory(InventoryItem item)
 	{
 		if (item != null)

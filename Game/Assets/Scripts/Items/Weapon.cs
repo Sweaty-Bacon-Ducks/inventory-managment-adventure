@@ -5,6 +5,41 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Weapon")]
 public class Weapon : InventoryItem
 {
+	[Range(0f, 1f)]
+	[SerializeField]
+	private float hitChance;
+
+	public float HitChance
+	{
+		get
+		{
+			return hitChance;
+		}
+	}
+	[Range(0f, 1f)]
+	[SerializeField]
+	private float criticalHitChance;
+
+	[Range(0.1f, 100f)]
+	[SerializeField]
+	private float criticalMultiplier;
+
+	public float CriticalMultiplier
+	{
+		get
+		{
+			return criticalMultiplier;
+		}
+	}
+
+	public float CriticalHitChance
+	{
+		get
+		{
+			return criticalHitChance;
+		}
+	}
+
 	[SerializeField]
 	private float maxDamage = 0.1f;
 
