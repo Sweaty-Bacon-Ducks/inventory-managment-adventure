@@ -5,7 +5,9 @@ using UnityEngine.EventSystems;
 
 public class ItemDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    public static GameObject itemDragged;
+	public static bool Lock = false;
+
+	public static GameObject itemDragged;
     public static Transform startParent;
 
     public static bool leftMouseButton;
@@ -72,6 +74,11 @@ public class ItemDragDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+		if (Lock)
+		{
+			leftMouseButton = false;
+			return;
+		}
         leftMouseButton = true;
         if (eventData.button == PointerEventData.InputButton.Right)
         {

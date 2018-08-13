@@ -10,7 +10,9 @@ public class Panel : MonoBehaviour, IDropHandler {
     // If player dropped the item on this panel
     public void OnDrop(PointerEventData eventData)
     {
-        if (ItemDragDrop.leftMouseButton == false)
+		if (ItemDragDrop.Lock)
+			return;
+		if (ItemDragDrop.leftMouseButton == false)
             return;
 
         if (ItemDragDrop.itemDragged != null)

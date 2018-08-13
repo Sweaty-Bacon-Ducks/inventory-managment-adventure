@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: MedHPPot
   m_EditorClassIdentifier: 
   Name: Medium HP Potion
-  Description: 
+  Description: Mediocore to the bone, like us
   Weight: 2
   Price: 0
   UIText1: 'Heals: 100 HP'

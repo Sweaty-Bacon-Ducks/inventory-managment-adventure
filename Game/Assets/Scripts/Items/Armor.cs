@@ -26,4 +26,16 @@ public class Armor : InventoryItem
 			return currentArmor;
 		}
 	}
+	public void Decay(float damage)
+	{
+		currentArmor -= damage;
+		if (currentArmor < 0)
+		{
+			currentArmor = 0;
+		}
+	}
+	public void Reset()
+	{
+		currentArmor = maxArmor;
+	}
 }

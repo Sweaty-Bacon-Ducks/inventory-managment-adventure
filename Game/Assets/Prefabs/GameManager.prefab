@@ -65,7 +65,7 @@ MonoBehaviour:
     currentWeight: 0
     weigthSlider: {fileID: 0}
   playerSlider: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 11400000, guid: 80b32c49462949142b3aaab8ffda9d58, type: 2}
 --- !u!114 &114289183053688082
 MonoBehaviour:
   m_ObjectHideFlags: 1
