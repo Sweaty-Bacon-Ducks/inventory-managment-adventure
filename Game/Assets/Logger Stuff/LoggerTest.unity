@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -295, y: -40}
+  m_AnchoredPosition: {x: 469, y: 113}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472207324
@@ -335,8 +335,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1981148643}
-        m_MethodName: REMOn
+      - m_Target: {fileID: 11400000, guid: 634e045bd2c3e8c4db324208145f8478, type: 2}
+        m_MethodName: ExecuteEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -540,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 154, y: -28}
+  m_AnchoredPosition: {x: 469, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756778037
@@ -582,8 +582,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1981148643}
-        m_MethodName: REMOff
+      - m_Target: {fileID: 11400000, guid: 21d07f506a8d9dc4c81c169ac4aabe34, type: 2}
+        m_MethodName: ExecuteEvent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1629,6 +1629,7 @@ GameObject:
   - component: {fileID: 1981148645}
   - component: {fileID: 1981148644}
   - component: {fileID: 1981148643}
+  - component: {fileID: 1981148647}
   m_Layer: 5
   m_Name: Logger
   m_TagString: Untagged
@@ -1701,6 +1702,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1981148642}
   m_CullTransparentMesh: 0
+--- !u!114 &1981148647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1981148642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4691e61b91ed43842b4064e522997b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2086259527
 MonoBehaviour:
   m_ObjectHideFlags: 0
