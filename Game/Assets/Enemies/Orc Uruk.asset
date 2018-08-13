@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699ce05c7d124b140adf732c43d03e34, type: 3}
+  m_Name: Orc Uruk
+  m_EditorClassIdentifier: 
+  _name: Orc Uruk
+  maxHitPoints: 200
+  isDead: 0
+  characterWeapon: {fileID: 11400000, guid: 1715cd0d8b3083a409b5022e44fa25f7, type: 2}
+  characterArmor: {fileID: 11400000, guid: a593a4918d738924fbd0642709482be6, type: 2}
+  Backpack:
+    character: {fileID: 0}
+    items: []
+    maxWeight: 30
+    currentWeight: 0
+    weigthSlider: {fileID: 0}

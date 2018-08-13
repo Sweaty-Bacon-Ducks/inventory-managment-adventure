@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804d807b534f41c4b82b8470abec209b, type: 3}
+  m_Name: BoomStick
+  m_EditorClassIdentifier: 
+  Name: Boom Stick
+  Description: You see this you primitive screwheads?
+  Weight: 10
+  Price: 0
+  UIText1: 'Min Damage: 10'
+  UIText2: 'Max Damage: 50'
+  UIText3: 'Attack Speed: 5'
+  Icon: {fileID: 21300000, guid: 466650357f8049640a831526fbe3374a, type: 3}
+  hitChance: 0.8
+  criticalHitChance: 0.01
+  criticalMultiplier: 100
+  maxDamage: 10
+  minDamage: 50
+  attackSpeed: 5

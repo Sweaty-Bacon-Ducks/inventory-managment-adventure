@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804d807b534f41c4b82b8470abec209b, type: 3}
+  m_Name: Ax-47
+  m_EditorClassIdentifier: 
+  Name: Ax-47
+  Description: Axe made by elfs, Soviet elfs
+  Weight: 15
+  Price: 0
+  UIText1: 'Min Damage: 5'
+  UIText2: 'Max Damage: 15'
+  UIText3: 'Attack Speed: 20'
+  Icon: {fileID: 21300000, guid: 10167f1d2f89d6d4ba997e07328ffe1b, type: 3}
+  hitChance: 0.6
+  criticalHitChance: 0.1
+  criticalMultiplier: 5
+  maxDamage: 5
+  minDamage: 15
+  attackSpeed: 20
