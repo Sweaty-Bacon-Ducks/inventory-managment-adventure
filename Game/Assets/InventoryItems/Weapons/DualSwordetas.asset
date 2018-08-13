@@ -19,6 +19,9 @@ MonoBehaviour:
   UIText2: 'Max Damage: 10'
   UIText3: 'Attack Speed: 25'
   Icon: {fileID: 21300000, guid: 8c0b93b3294ef164cae8848ac7ae449e, type: 3}
+  hitChance: 0.947
+  criticalHitChance: 0.0001
+  criticalMultiplier: 100
   maxDamage: 5
   minDamage: 10
   attackSpeed: 25
