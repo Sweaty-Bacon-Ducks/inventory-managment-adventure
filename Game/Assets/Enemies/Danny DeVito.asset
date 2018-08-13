@@ -13,8 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Danny DeVito
   maxHitPoints: 250
-  characterWeapon: {fileID: 11400000, guid: 1715cd0d8b3083a409b5022e44fa25f7, type: 2}
-  characterArmor: {fileID: 11400000, guid: 3a3d2c2612bf97f40a8be51486b52928, type: 2}
+  isDead: 0
+  characterWeapon: {fileID: 0}
+  characterArmor: {fileID: 0}
   Backpack:
     character: {fileID: 0}
     items: []

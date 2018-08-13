@@ -13,9 +13,10 @@ public class LogStarter : MonoBehaviour
 
 		if (FightEventMono.InProgress == false)
 		{
-			fem.Fight();
+			
 		}
-		Debug.Log("Logger started");
+        fem.Fight();
+        Debug.Log("Logger started");
 	}
 	
 }

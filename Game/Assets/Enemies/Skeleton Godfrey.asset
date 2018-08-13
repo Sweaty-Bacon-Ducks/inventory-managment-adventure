@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Skeleton Godfrey
   maxHitPoints: 120
-  characterWeapon: {fileID: 11400000, guid: bb79321378432d54bbfcf00781316da1, type: 2}
+  isDead: 0
+  characterWeapon: {fileID: 11400000, guid: 19da78901c155d6498592e4b6c791796, type: 2}
   characterArmor: {fileID: 11400000, guid: 3a3d2c2612bf97f40a8be51486b52928, type: 2}
   Backpack:
     character: {fileID: 0}

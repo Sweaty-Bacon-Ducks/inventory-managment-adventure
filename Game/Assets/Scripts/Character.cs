@@ -14,7 +14,7 @@ public class Character : ScriptableObject, IComparable
 	[SerializeField]
 	private float maxHitPoints;
 
-	private bool isDead;
+	public bool isDead;
 
 	[SerializeField]
 	private Weapon characterWeapon;

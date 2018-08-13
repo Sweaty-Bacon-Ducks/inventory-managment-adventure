@@ -8,6 +8,9 @@ public class FightEvent
 {
 	public IEnumerator EventAction(Character player, Character enemy)
 	{
+        player.Reset();
+        enemy.Reset();
+
 		FightEventMono.InProgress = true;
 		const string healString = "{0} healed himself!";
 		const string startString = "{0} has encountered {1}, brace yourselves!";
@@ -46,12 +49,13 @@ public class FightEvent
 
 		while (!player.IsDead && !enemy.IsDead)
 		{
-			Character currentCharacter = fightQueue[queueIndex];
+
+            Character currentCharacter = fightQueue[queueIndex];
 			Character nextCharacter = fightQueue[(queueIndex + 1) % 2];
 			queueIndex = (queueIndex + 1) % 2;
 
-			timeBetweenTurns = Random.Range(minWaitTime, maxWaitTime);
-
+            timeBetweenTurns = Random.Range(minWaitTime, maxWaitTime);
+            
 			Debug.Log(currentCharacter.Name + " " + currentCharacter.HitPoints);
 
 			if (currentCharacter.HitPoints / currentCharacter.MaxHitPoints < 0.25f) //Heal
@@ -108,7 +112,17 @@ public class FightEvent
 			yield return new WaitForSeconds(timeBetweenTurns);
 
 			currentTime = DateTime.Now;
-		}
+
+
+
+            //if (currentCharacter.HitPoints <= 0)
+            //{
+            //    currentCharacter.isDead = true;
+            //}
+
+        }
+        enemy.Reset();
+
 		Character dead;
 		Character winner = CheckWinner(player, enemy, out dead);
 

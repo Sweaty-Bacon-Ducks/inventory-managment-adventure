@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Orc Uruk
   maxHitPoints: 200
-  characterWeapon: {fileID: 11400000, guid: bb79321378432d54bbfcf00781316da1, type: 2}
+  isDead: 0
+  characterWeapon: {fileID: 11400000, guid: 1715cd0d8b3083a409b5022e44fa25f7, type: 2}
   characterArmor: {fileID: 11400000, guid: a593a4918d738924fbd0642709482be6, type: 2}
   Backpack:
     character: {fileID: 0}
