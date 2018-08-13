@@ -4,10 +4,11 @@ using UnityEngine;
 using System;
 
 public delegate void CallBack(bool response);
+public delegate void CallbackParams(params object[] items);
 
 public class InputAwaiter : MonoBehaviour
 {
-    private bool ocupied;
+    private bool ocupied = false;
     private List<CallBack> query = new List<CallBack>();
     private static InputAwaiter instance;
     public static InputAwaiter Instance { get { return instance; } }
@@ -25,40 +26,67 @@ public class InputAwaiter : MonoBehaviour
         }
     }
     
-    public void GetRespose(CallBack callBack)
+    public void GetResponse(CallBack callBack)
     {
-        
-        if (!ocupied)
+        query.Add(callBack);
+
+        if (ocupied==false)
         {
             ocupied = true;
-            StartCoroutine(WaitForResponse(callBack));
+            StartCoroutine(WaitForResponse());
         }
-        else
-        {
-            query.Add(callBack);
-        }
-        
     }
 
-    private IEnumerator WaitForResponse(CallBack callBack)
+    public void ContinueAfter(CallBack callBack, float t)
     {
-        //while (!y || !n)
-        //{
-        //    if (Input.GetKey("y")) response = true;
-        //    if (Input.GetKey("n")) response = false;
-        //    yield return null;
-        //}
-        for (int i = 0; i < 5; i++)
-        {
-            Logger.Instance.ShowLog(DateTime.Now, (i+1).ToString());
-            yield return new WaitForSeconds(1);
-        }
-        callBack(true);
-        ocupied = false;
-        GetRespose(query[1]);
-        query.RemoveAt(1);
+        StartCoroutine(WaitForSeconds(callBack, t));
+    }
 
+    private void CleanUp()
+    {
+        ocupied = false;
+        query.RemoveAt(0);
+
+        if (query.Count > 0)
+        {
+            ocupied = true;
+            StartCoroutine(WaitForResponse());
+        }
+    }
+
+
+    private bool answer;
+    private IEnumerator WaitForResponse()
+    {
+        bool answered = false;
+        while (!answered)
+        {          
+            if (Input.GetKey("y"))
+            {
+                answer = true;
+            }
+            if (Input.GetKey("n"))
+            {
+                answer = false;
+            }
+            if (Input.GetKeyUp("y") || Input.GetKeyUp("n"))
+            {
+                answered = true;
+            }
+            yield return null;
+        }
         
+        query[0](answer);
+        CleanUp();
+        
+    }
+    
+
+    private IEnumerator WaitForSeconds(CallBack callBack, float t)
+    {
+        yield return new WaitForSeconds(t);
+        callBack(true);
 
     }
+    
 }

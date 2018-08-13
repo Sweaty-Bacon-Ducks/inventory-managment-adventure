@@ -11,16 +11,17 @@ public class ChestEvent : EventSO
 
     public override void ExecuteEvent()
     {
-        callback = new CallBack(Continue);
-        InputAwaiter.Instance.GetRespose(callback);
-    }
 
+        callback = new CallBack(Continue);
+        InputAwaiter.Instance.GetResponse(callback);
+    }
+    
 
     
    
     public void Continue(bool response)
     {
-        Logger.Instance.ShowLog(System.DateTime.Now, x);
+        Logger.Instance.ShowLog(System.DateTime.Now, x+" "+response);
     }
 
     

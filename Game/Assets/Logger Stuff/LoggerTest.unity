@@ -583,7 +583,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 21d07f506a8d9dc4c81c169ac4aabe34, type: 2}
-        m_MethodName: ExecuteEvent
+        m_MethodName: DoIt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
