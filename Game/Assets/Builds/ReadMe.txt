@@ -1,0 +1,1 @@
+Do tego folderu wstawiamy swoje buildy, nie s¹ one pushowane na githuba.
